@@ -3,6 +3,10 @@ plugins {
     id 'org.jetbrains.kotlin.android'
 }
 
+final VERSION_MAJOR = 0
+final VERSION_MINOR = 0
+final VERSION_PATCH = 1
+
 android {
     namespace 'com.amary.materialtoast'
     compileSdk 33
@@ -10,6 +14,8 @@ android {
     defaultConfig {
         minSdk 21
         targetSdk 33
+        versionCode getVersionCode(VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH)
+        versionName getVersionName(VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH)
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -42,4 +48,12 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+}
+
+private static int getVersionCode(int major, int minor, int patch){
+    return major * 100000 + minor * 10000  + patch
+}
+
+private static String getVersionName(int major, int minor, int patch){
+    return "${major}.${minor}.${patch}"
 }
