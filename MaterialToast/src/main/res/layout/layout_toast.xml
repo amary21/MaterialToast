@@ -75,7 +75,6 @@
             android:id="@+id/btn_img_right"
             android:layout_width="18dp"
             android:layout_height="18dp"
-            android:tint="?attr/colorOnPrimary"
             android:src="@drawable/ic_close"
             android:layout_margin="12dp"
             app:layout_constraintEnd_toEndOf="parent"
