@@ -1,4 +1,4 @@
-package com.amary.materialtoast
+package com.amary.sample
 
 import org.junit.Test
 
