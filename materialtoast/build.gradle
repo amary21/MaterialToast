@@ -8,7 +8,7 @@ def githubProperties = new Properties()
 githubProperties.load(new FileInputStream(rootProject.file("github.properties")))
 
 def getArtifactId = { ->
-    return "MaterialToast"
+    return "materialtoast"
 }
 
 final VERSION_MAJOR = 0
@@ -49,23 +49,25 @@ android {
     }
 }
 
-publishing {
-    publications {
-        bar(MavenPublication) {
-            groupId 'com.amary.materialtoast' // Replace with group ID
-            artifactId getArtifactId()
-            version getVersionName(VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH)
-            artifact("$buildDir/outputs/aar/${getArtifactId()}-release.aar")
+afterEvaluate {
+    publishing {
+        publications {
+            bar(MavenPublication) {
+                groupId 'com.amary.materialtoast' // Replace with group ID
+                artifactId getArtifactId()
+                version getVersionName(VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH)
+                artifact("$buildDir/outputs/aar/${getArtifactId()}-release.aar")
+            }
         }
-    }
 
-    repositories {
-        maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/amary21/MaterialToast")
-            credentials {
-                username = githubProperties['gpr.usr'] ?: System.getenv("GPR_USER")
-                password = githubProperties['gpr.key'] ?: System.getenv("GPR_API_KEY")
+        repositories {
+            maven {
+                name = "GitHubPackages"
+                url = uri("https://maven.pkg.github.com/amary21/MaterialToast")
+                credentials {
+                    username = "amary21"
+                    password = "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"
+                }
             }
         }
     }
