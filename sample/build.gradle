@@ -5,7 +5,7 @@ plugins {
 
 final VERSION_MAJOR = 0
 final VERSION_MINOR = 0
-final VERSION_PATCH = 1
+final VERSION_PATCH = 2
 
 android {
     namespace 'com.amary.materialtoast'
