@@ -1,8 +1,10 @@
-package com.amary.materialtoast
+package com.amary.sample
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.amary.materialtoast.databinding.ActivityMainBinding
+import com.amary.materialtoast.MToast
+import com.amary.materialtoast.MToastType
+import com.amary.sample.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 

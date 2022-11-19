@@ -8,15 +8,16 @@ final VERSION_MINOR = 0
 final VERSION_PATCH = 2
 
 android {
-    namespace 'com.amary.materialtoast'
+    namespace 'com.amary.sample'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.amary.materialtoast"
+        applicationId "com.amary.sample"
         minSdk 21
         targetSdk 33
         versionCode getVersionCode(VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH)
         versionName getVersionName(VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH)
+        multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
