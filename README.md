@@ -14,15 +14,17 @@ Material Toast  is distributed through Github Package. To use it, you need to do
    - Make sure you include this file within your .gitignore as it contains sensitive credentials
    - Add properties 
       ```groovy
-      ext.user=GITHUB_USERID
-      ext.key=PERSONAL_ACCESS_TOKEN
+      gpr.user=GITHUB_USERID
+      gpr.key=PERSONAL_ACCESS_TOKEN
       ```
       Replace GITHUB_USERID with your organisation user ID or your personal GitHub user ID. Replace **PERSONA_ACCESS_TOKEN** with the token generated in the previous step
 
 3. **Add dependencies Material Toast** 
    - Make the following changes to your build.gradle:
       ```groovy
-      apply from: rootProject.file("github.properties")
+      def githubProperties = new Properties()
+      githubProperties.load(new FileInputStream(rootProject.file("github.properties")))
+
       
       android {
          ...
@@ -30,14 +32,10 @@ Material Toast  is distributed through Github Package. To use it, you need to do
          repositories {
             maven {
                   name = "GitHubPackages"
-      
-                  // Replace GITHUB_USERID with your personal or organisation user ID and
-                  // REPOSITORY with the name of the repository on GitHub
                   url = uri("https://maven.pkg.github.com/amary21/MaterialToast")
-      
                   credentials {
-                     username = ext.usr
-                     password = ext.key
+                     username = githubProperties['gpr.user'] ?: System.getenv("GPR_USER")
+                     password = githubProperties['gpr.key'] ?: System.getenv("GPR_KEY")
                   }
             }
          }
@@ -45,7 +43,6 @@ Material Toast  is distributed through Github Package. To use it, you need to do
       
       dependencies {
          ...
-         // Your package
          implementation("com.amary.materialtoast:materialtoast:0.0.2")
       }
       ```
