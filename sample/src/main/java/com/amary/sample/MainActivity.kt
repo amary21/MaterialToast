@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
             btnWarning.setOnClickListener {
                 MToast.Builder(this@MainActivity)
                     .setType(MToastType.WARNING)
-                    .setMessage("This is an error alert — check it out!")
+                    .setMessage("This is an warning alert — check it out!")
                     .show()
             }
 
@@ -41,14 +41,14 @@ class MainActivity : AppCompatActivity() {
                 MToast.Builder(this@MainActivity)
                     .setType(MToastType.WARNING)
                     .setTitle("Warning")
-                    .setMessage("This is an error alert — check it out!")
+                    .setMessage("This is an warning alert — check it out!")
                     .show()
             }
 
             btnInfo.setOnClickListener {
                 MToast.Builder(this@MainActivity)
                     .setType(MToastType.INFO)
-                    .setMessage("This is an error alert — check it out!")
+                    .setMessage("This is an info alert — check it out!")
                     .show()
             }
 
@@ -56,14 +56,14 @@ class MainActivity : AppCompatActivity() {
                 MToast.Builder(this@MainActivity)
                     .setType(MToastType.INFO)
                     .setTitle("Info")
-                    .setMessage("This is an error alert — check it out!")
+                    .setMessage("This is an info alert — check it out!")
                     .show()
             }
 
             btnSuccess.setOnClickListener {
                 MToast.Builder(this@MainActivity)
                     .setType(MToastType.SUCCESS)
-                    .setMessage("This is an error alert — check it out!")
+                    .setMessage("This is an success alert — check it out!")
                     .show()
             }
 
@@ -71,7 +71,7 @@ class MainActivity : AppCompatActivity() {
                 MToast.Builder(this@MainActivity)
                     .setType(MToastType.SUCCESS)
                     .setTitle("Success")
-                    .setMessage("This is an error alert — check it out!")
+                    .setMessage("This is an success alert — check it out!")
                     .show()
             }
         }
